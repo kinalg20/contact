@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <div class="contact-form">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12">
+                <div class="card">
+                    <h1>Contact Form</h1>
+                    <div class="form-box">
+                        <form action="#" method="get">
+                            <div class="row">
+                                <div class="first mx-3 my-3">
+                                    <div class="col-lg-6">
+                                        <div class="first-col">
+                                            <label for="fname" class="fname"><strong>FIRST NAME*</strong></label>
+                                            <input type="text" class="form-control" ngModel name="fname" id="fname"
+                                                placeholder="First name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 ">
+                                        <div class="last-col">
+                                            <label for="lname" class="lname"><strong>LAST NAME*</strong></label>
+                                            <input type="text" class="form-control" ngModel name="lname" id="lname"
+                                                placeholder="Last name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Email">
+                                    <label for="Email" class="email"><strong>EMAIL*</strong></label>
+                                    <input type="text" class="form-control" placeholder="Email" name="email" ngModel
+                                        id="email" required>
+                                </div>
+
+                                <div class="Message">
+                                    <label for="Message" class="message"><strong>MESSAGE*</strong></label>
+                                    <textarea class="form-control" rows="3" placeholder="Message" name="Message"
+                                        id="Message" ngModel></textarea>
+                                </div>
+
+                                <div class="Additional_Details">
+                                    <label for="Additional_Details" class="Additional_Details"><strong>ADDITIONAL
+                                            DETAILS*</strong></label>
+                                    <textarea class="form-control" rows="4" placeholder="Additional Details"
+                                        name="Additional" id="Additional" ngModel></textarea>
+                                </div>
+                                <div class="send-message">
+                                    <button type="submit" class="btn btn-primary" onclick="sendEmail()">Send Message</button>
+                                </div>
+                            </div>
+                            <script>
+                                function sendEmail() {
+                                    var first_name = $('#fname').val();
+                                    //     var last_name = $('#Lname').val();
+                                    var email = $('#email').val();
+                                    //     var phone = $('#Con_phone').val();
+                                    //     var message = $('#Message').val();
+
+                                    // var Body = 'Name: ' + first_name + last_name + '<br>Email: ' + email + '<br>phone:' + phone + '<br>Message:' + message;
+                                    Email.send({
+                                        Host: "smtp.gmail.com",
+                                        Username: "kinal27213@gmail.com",
+                                        Password: "Kinal123@",
+                                        To: 'kinal27213@gmail.com',
+                                        From: 'kinal27213@gmail.com',
+                                        Subject: "Query from customer",
+                                        Body: first_name,
+                                    })
+                                        .then(
+                                            alert('your mail has been sent successfully we will connect you as soon as possible'));
+                                }
+                            </script>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="content">
+                    <div class="demo">
+                        <h2>How JusBid works?</h2>
+                        <p style="text-align:justify">JusBid provides hotel rooms and MICE services based on the bidding
+                            process. If you are a
+                            hotelier, you can earn income on your unused inventory, and if you are a customer, you can
+                            get
+                            hotel rooms at a lower price. </p>
+                    </div>
+                    <div class="demo">
+                        <h4>Book a hotel room?</h4>
+                        <p>Open the site/app and look for the desired hotel. Make a bid. If you are booking a hotel on
+                            an
+                            instant basis, the hotel will confirm your booking bid within half an hour. When confirmed,
+                            the
+                            room is yours for the desired date and time!</p>
+                        <hr>
+                    </div>
+                    <div class="demo">
+                        <h4>Book a hotel room in advance </h4>
+                        <p>Now you can book a hotel more than three days before your stay. For that, you have to look
+                            for
+                            the hotel and place a bid. The maximum period a hotel will take to confirm your bid is two
+                            days.
+                            When they confirm the bid, you can book the stay well in advance!</p>
+                        <hr>
+                    </div>
+                    <div class="demo">
+                        <h4>What if my bid gets cancelled?</h4>
+                        <p>In this bidding system, the hotel
+                            can reject your bid if it is not satisfied with the price.
+                            In
+                            this case, you can place a bid again on a higher price or look for another hotel. We provide
+                            plenty of hotel rooms to book!
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
